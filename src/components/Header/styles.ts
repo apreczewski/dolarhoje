@@ -6,11 +6,7 @@ export const Wrapper = styled.div`
   align-items: center;
   width: 100%;
 
-
   a {
     padding: 5px 10px;
   }
-
-
-
 `;
