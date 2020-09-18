@@ -1,7 +1,7 @@
 import { dhcToast } from '../styles/DHCToast';
 
 export function copyDataInput(dollarSign: string, elementByID: string) {
-  const element = <HTMLInputElement>document.getElementById(elementByID);
+  const element = document.getElementById(elementByID) as HTMLInputElement;
   element.select();
   element.setSelectionRange(0, 99999);
   document.execCommand('copy');

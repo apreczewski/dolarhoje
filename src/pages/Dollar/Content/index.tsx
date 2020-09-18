@@ -1,154 +1,78 @@
 import React from 'react';
+import Paragraph from '../../../components/Paragraph';
 
-import { Wrapper, Title, Paragraph } from './styles';
+import { Wrapper } from './styles';
 
 const Content: React.FC = () => {
   return (
     <Wrapper>
-      {/* <Title>Onde o Dólar Hoje está mais barato?</Title>
-              <ul>
-                <li>Rio de JaneiroR$ 5,16</li>
-                <li>São PauloR$ 5,16</li>
-                <li>CuritibaR$ 5,19</li>
-                <li>CampinasR$ 5,20</li>
-                <li>BrasíliaR$ 5,22</li>
-                <li>Porto AlegreR$ 5,23</li>
-                <li>Belo HorizonteR$ 5,24</li>
-                <li>SantosR$ 5,24</li>
-                <li>FortalezaR$ 5,25</li>
-              </ul> */}
-      <Title>Dólar Turismo</Title>
-      <Paragraph>
-        O Dólar é a moeda oficial dos Estados Unidos e de outros 4 países. Além
-        disso, é a moeda mais utilizada no mundo inteiro, tanto na livre
-        circulação como em reservas internacionais e negociações comerciais. Em
-        2013, havia US$ 2,7 trilhões de Dólares em circulação e estima-se que 2
-        terços desse dinheiro circulem fora dos Estados Unidos. Sua origem do
-        nome vem de “thaler”, abreviação de “Joachimsthaler”, uma moeda de prata
-        da Boêmia dos séculos 16 a 19. O símbolo da moeda é US$, que nada mais é
-        que a junção da sigla do país com o símbolo $. O Dólar americano foi
-        criado quando houve a necessidade de uma moeda para financiar a Guerra
-        da Independência nos Estados Unidos, em 1776. Dez anos depois, as 13
-        colônias já independentes aprovaram o Dólar como moeda oficial do país.
-        Porém, a importância econômica demorou para chegar: até meados do século
-        19, quem ocupava o posto de moeda mais importante era a libra esterlina,
-        do Reino Unido. Os Estados Unidos não eram vistos com bons olhos no
-        cenário econômico internacional, por causa da falta de leis que
-        controlassem a emissão da própria moeda. Só depois do fim da II Guerra
-        Mundial que o Dólar se tornou tão importante para a economia mundial -
-        situação que se mantém até hoje.
+      <Paragraph title="O que é Dólar Turismo?" >
+        <p>Diferente do dólar comercial, o dólar turismo representa a cotação da moeda norte americana para pessoas físicas que precisam dos valores durante uma viagem. O valor é resultado do dólar comercial com acréscimo do Imposto sobre Operações Financeiras (IOF) e outros custos ligados à logística de transporte e operações necessários para que a moeda chegue até o seu destino.</p>
       </Paragraph>
-      {/* <Title>Como o Dólar se divide hoje?</Title>
-              <Paragraph>O Dólar é a unidade básica da moeda, como é o R$1 (um Real) no Brasil e 1€ (um Euro) em vários países da europa. US$1 (um Dólar) são 100 cents (ou pennies). Hoje, existem seis moedas e sete notas em circulação. Essa é a divisão entre as moedas:</Paragraph>
-              <ul>
-                <li>US$ 1,00 = 1 dollar</li>
-                <li>US$ 0,50 = 1 half-dollar ou 50 cents (50 centavos)</li>
-                <li>US$ 0,25 = 1 quarter ou 25 cents (25 centavos)</li>
-                <li>US$ 0,10 = 1 dime ou 10 cents (10 centavos)</li>
-                <li>US$ 0,05 = 1 nickel ou 5 cents (5 centavos)</li>
-                <li>US$ 0,01 = 1 penny ou 1 cent (1 centavo)</li>
-              </ul> */}
-
-      <Title>Qual a diferença entre Dólar Comercial e Dólar Turismo?</Title>
-      <Paragraph>
-        O que vemos normalmente na televisão e nos sites de notícias é o câmbio
-        comercial, mas para quem está se preparando para uma viagem sempre acaba
-        se surpreendendo com o valor bem maior cobrado nas casas de câmbio e nas
-        conversões feitas na compra de pacotes para o exterior. Para se ter uma
-        ideia, a cotação turismo do Dólar pode ser até 8% maior que sua cotação
-        comercial. Essas diferenças ocorrem porque desde 1999 o Brasil vive em
-        um sistema de câmbio Flexível - antes disso o câmbio tinha um valor
-        pré-fixado ante o real -, ou seja, ele pode ser negociado livremente por
-        quem compra e quem vende a moeda. Por isso é importante comparar a
-        cotação turismo do Dólar entre várias casas de câmbio antes de comprar.
-        A explicação para o Dólar turismo ser mais caro que o comercial é
-        simples: para se comprar e vender o Dólar turismo é preciso ter o
-        dinheiro em mãos, ou seja, o que acarreta em maiores custos para as
-        casas de câmbio, como transporte, manutenção e seguro contra roubos, o
-        que eleva o preço da moeda para compensar esses gastos. Por outro lado,
-        as transações comerciais são realizadas virtualmente, de forma
-        eletrônica.
+      <Paragraph title="Qual a diferença entre Dólar Comercial e Dólar Turismo?" >
+        <p>O dólar comercial é a cotação dada ao dólar em referência a outras moedas e utilizado em importações e exportações. Caso você veja um jornal e ele diga “Um dólar hoje equivale a cinco reais” é do valor do dólar comercial que estão se referindo.</p>
       </Paragraph>
-
-      <Title>Afinal, porque o mundo funciona em Dólar?</Title>
-      <Paragraph>
-        O Dólar passou a ser referência em todo o mundo ainda na primeira metade
-        do século XX, quando o padrão ouro, adotado até então, fracassou. Até o
-        início da Primeira Guerra Mundial, as instituições financeiras de cada
-        país adotavam uma taxa fixa para suas moedas em relação ao outro. As
-        negociações comerciais eram feitas respeitando esse preço fixo,
-        impedindo que alguns países mexessem em sua taxa de câmbio para aumentar
-        suas exportações e reverter déficits comerciais, e, assim, garantindo a
-        estabilidade da economia. As discussões sobre o novo modelo começaram
-        ainda durante a Segunda Guerra Mundial, e consolidou-se, nesse período,
-        a visão de que a melhor estratégia seria algo similar à adotada durante
-        o padrão ouro, com uma taxa de câmbio fixa, baseada em uma moeda forte.
-        A moeda seria obviamente do país que fosse considerado capaz de ser o
-        regente da orquestra, naquela época, os Estados Unidos.
+      <Paragraph title="Afinal, porque o mundo funciona em Dólar?" >
+        <p>Logo no início do século XX, os Estados Unidos já começavam a se firmar enquanto potência mundial. Após a Segunda Guerra Mundial, os norte americanos financiaram a reconstrução do Japão e da Europa. Hoje, a variação do dólar pode influenciar desde o seu serviço de assinatura até o preço do bacalhau. Além de tudo, ainda temos o efeito da “dolarização” onde um país pode abdicar de uma moeda própria e adotar o dólar como moeda oficial (é o caso do Equador) ou simplesmente a população aceitar o dólar em suas transações internas (como a Argentina).</p>
       </Paragraph>
-
-      <Title>Que países, além dos EUA, aceitam o Dólar hoje?</Title>
-      <Paragraph>
-        Como moeda oficial: Ilhas Virgens Britânicas, Equador, Ilhas Turcas e
-        Caicos, El Salvador, Guam, Ilhas Marianas do Norte, Ilhas Marshall,
-        Micronésia, Palau, Porto Rico, Samoa, Timor Leste e Zimbábue. Dólar
-        equiparado: Panamá, Bahamas e Belize. Grande aceitação: Vietnã, Camboja,
-        Nicarágua, Barbados, Ilhas Cayman, Saint Martin, Saint Kitts e Nevis,
-        Curaçao.
+      <Paragraph title="Que países, além dos EUA, aceitam o Dólar hoje?" >
+        <p>Pelo efeito da Dolarização, segue a lista de países que aceita pagamentos em dólar americano nas suas transações internas:</p>
+        <ul>
+          <li>Equador</li>
+          <li>Panamá</li>
+          <li>El-Salvador</li>
+          <li>Zimbábue</li>
+          <li>Costa Rica</li>
+          <li>Bahamas</li>
+          <li>Barbados</li>
+          <li>Belize</li>
+          <li>Bermudas</li>
+          <li>Camboja</li>
+          <li>Haiti</li>
+          <li>Honduras</li>
+          <li>Líbano</li>
+          <li>Libéria</li>
+          <li>Coreia do Norte</li>
+          <li>Palau</li>
+          <li>Somália</li>
+          <li>Timor-Leste</li>
+          <li>Micronésia</li>
+        </ul>
+        <p>Além desses países, temos aqueles que possuem outros tipos de dólar, como: East Caribbean Dollar, Australian Dollar, Singapore Dollar, Canadian Dollar, Cayman Island Dollar e Hong Kong Dollar.</p>
       </Paragraph>
-
-      <Title>O que influencia a cotação do Dólar hoje?</Title>
-      <Paragraph>
-        O Dólar hoje funciona como “âncora cambial”, ou seja, é referência para
-        as moedas dos países basearem seu valor. Sua alta ou baixa é como um
-        reflexo de como anda a economia dos principais países pelo mundo. Também
-        há interferência da situação de cada país. A economia dos países com
-        grande peso na economia, como é o caso da China, tem influência na
-        cotação do Dólar. Além disso, outros fatores contribuem: os contratos de
-        importação e exportação entre os países, as reservas internacionais de
-        Dólar mantidas pelo Banco Central, as operações do BC para barrar a
-        contínua alta ou baixa do Dólar e as novidades na economia e política
-        americana, como anúncio de alteração da taxa de juros.
+      <Paragraph title="O que influencia a cotação do Dólar hoje?" >
+        <p>Assim como as demais moedas, a oferta e procura é um dos fatores da variação cambial. Além deles podemos citar:</p>
+        <ul>
+          <li>O cenário político que pode trazer segurança ou não para os investidores</li>
+          <li>Déficit na balança comercial de acordo com a moeda a ser cambiada para o dólar</li>
+          <li>Quanto os turistas estão consumindo da moeda em suas viagens</li>
+          <li>As taxas de juros (A taxa básica de juro) dos Estados Unidos, podendo até fazer os investidores migrarem seus investimentos para outros países</li>
+          <li>No caso da cotação em relação ao real, ainda temos a interferência do Bacen com: compra e venda de dólares, a venda de títulos públicos em dólar, alterações nos impostos e as alterações na taxa Selic</li>
+        </ul>
       </Paragraph>
-
-      <Title>O que é o câmbio flutuante?</Title>
-      <Paragraph>
-        O governo brasileiro mantém o Dólar em variação, de acordo com a oferta
-        e procura da moeda e negociações comerciais. É por isso que sua operação
-        é chamada de “câmbio flutuante”.
+      <Paragraph title="O que é o câmbio flutuante?" >
+        <p>O câmbio flutuante é quando um país decide não impor uma política cambial e deixa com que o próprio mercado se regule livremente. Sendo assim, não há o controle por parte do governo da compra e venda das moedas o que favorece a lei da oferta e da procura.</p>
       </Paragraph>
-
-      <Title>Qual a hora certa de comprar Dólar?</Title>
-      <Paragraph>
-        Sempre acompanhe o noticiário e saiba tirar proveito e comprar o Dólar
-        quando estiver com uma cotação mais baixa. Se você sabe que naquele dia
-        os EUA irão anunciar novidades sobre sua economia ou a política
-        brasileira terá uma fase decisiva, fique de olho nos momentos de baixa.
-        Essa é a hora de negociar a compra por telefone ou correr para uma casa
-        de câmbio.
+      <Paragraph title="Qual a hora certa de comprar Dólar?" >
+        <p>Existem algumas dicas para que você compre dólares de maneira mais satisfatória e rentável, dentre elas estão:</p>
+        <ul>
+          <li>Compre em etapas, assim você diminui os riscos de prejuízo ao comprar tudo de uma vez em uma cotação não tão favorável</li>
+          <li>Acompanhe a tendência, não deixe de se atualizar da cotação e das notícias. Fatores como instabilidade política e alterações nos impostos são fatores muito importantes para alteração da cotação</li>
+          <li>Pesquise em diferentes casas de câmbio e encontre aquela com a melhor oferta</li>
+          <li>Seja rápido e não perca quedas súbitas no valor, deixar para amanhã pode te dar prejuízo</li>
+        </ul>
       </Paragraph>
-
-      <Title>Como identificar notas falsas de Dólar hoje?</Title>
-      <Paragraph>
-        No toque é possível notar a qualidade do papel. Veja se a impressão é
-        precisa e nítida, sem pontos borrados. Analise também os números de
-        série, se estão separados de maneira uniforme e alinhadas. Há diferentes
-        pontos na nota verdadeira em que se pode sentir o alto-relevo. Ao
-        inclinar a nota, você verá o número 100 no canto inferior direito. Na
-        nota de US$ 100, uma das mais falsificadas, há o filete de segurança ao
-        visualizar contra a luz, assim como a marca d’água de Benjamin Franklin.
-        Com lupa, você verá uma série de microimpressões que não constam nas
-        notas falsas.
-      </Paragraph>
-
-      <Title>Como o Dólar pode ser abreviado?</Title>
-      <Paragraph>
-        O código oficial para o Dólar hoje nos Estados Unidos é USD, sigla para
-        United States Dollar. O Fundo Monetário Internacional refere-se ao Dólar
-        como US$, abreviação muito comum. Mas também é possível utilizar apenas
-        o $ antes do valor numérico. O sinal é resultado de uma evolução da
-        sigla “ps”, de peso, utilizada no século 18. O “p” e o “s” passaram a
-        ser escritos um em cima do outro, originando o $.
+      <Paragraph title="Como identificar notas falsas de Dólar hoje?"  >
+      <img src="https://cdn.pixabay.com/photo/2016/04/30/00/28/dollar-1362243_960_720.jpg" alt="dolar"/>
+      <ul>
+        <p>Dicas para você descobrir se a nota é falsa ou não:</p>
+        <li>No toque é possível notar a qualidade do papel. </li>
+        <li>Veja se a impressão é precisa e nítida, sem pontos borrados.</li>
+        <li>Analise também os números de série, se estão separados de maneira uniforme e alinhadas. Há diferentes pontos na nota verdadeira em que se pode sentir o alto-relevo.</li>
+        <li>Ao inclinar a nota, você verá o número 100 no canto inferior direito.</li>
+        <li>Na nota de US$ 100, uma das mais falsificadas, há o filete de segurança ao visualizar contra a luz, assim como a marca d’água de Benjamin Franklin.</li>
+        <li>Com uma lupa, você verá uma série de microimpressões que não constam nas notas falsas.*(mantido)</li>
+      </ul>
       </Paragraph>
     </Wrapper>
   );

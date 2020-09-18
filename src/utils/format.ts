@@ -47,13 +47,13 @@ export function handleMultiplication(
   amount: string,
   price: string,
   currency: string,
-  code: string,
+  languageCode: string,
 ) {
   const result = parseFloat(amount) * parseFloat(price);
   if (result.toString() === 'NaN') {
-    return formatCurrency('0', currency, code);
+    return formatCurrency('0', currency, languageCode);
   }
-  return formatCurrency(result.toString(), currency, code);
+  return formatCurrency(result.toString(), currency, languageCode);
 }
 
 export function handleDivision(
