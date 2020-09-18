@@ -7,6 +7,8 @@ export const Wrapper = styled.div`
   width: 100%;
 
   a {
+    text-decoration: none;
     padding: 5px 10px;
+    box-shadow: 
   }
 `;

@@ -19,9 +19,9 @@ const Routes: React.FC = () => {
       <Route path="/yuan" exact component={Yuan} />
       <Route path="/libra" exact component={Libra} />
       <Route path="/iene" exact component={Iene} />
-      <Route path="/gold" exact component={Bitcoin} />
-      <Route path="/bitcoin" exact component={Ethereum} />
-      <Route path="/ethereum" exact component={Gold} />
+      <Route path="/gold" exact component={Gold} />
+      <Route path="/bitcoin" exact component={Bitcoin} />
+      <Route path="/ethereum" exact component={Ethereum} />
     </Switch>
   );
 };

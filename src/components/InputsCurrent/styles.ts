@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import colors from '../../styles/colors';
 
+
+
 export const Wrapper = styled.div`
   display: flex;
   justify-content: center;
@@ -17,6 +19,9 @@ export const Wrapper = styled.div`
 `;
 
 export const FieldValue = styled.div`
+
+  --focus-color: #7a7a7a;
+
   height: 80px;
   width: 400px;
   border: none;
@@ -38,19 +43,29 @@ export const FieldValue = styled.div`
   box-shadow:
     -10px -10px 15px rgba(70, 70, 70, 0.12),
     10px 10px 15px rgba(255, 255, 255, 0.5);
-  /* transform: translate(-50%, -50%); */
+  transition: box-shadow 1s;
   outline: none;
 
 
+
   &:focus {
-    box-shadow: 0px 0.5px 10px ${colors.electricViolet};
+    box-shadow: 0px 0.5px 10px var(--focus-color);
+  }
+
+  &:hover {
+    --focus-color: #15a38a;
+
+    box-shadow:
+    -10px -10px 15px rgba(70, 70, 70, 0.12),
+    10px 10px 15px rgba(21,163,138, 0.12);
   }
 
   > span {
     align-self: flex-end;
     font-size: 1.5em;
-    color: #7a7a7a;
+    color: var(--focus-color);
     margin-right: 25px;
+    transition: color 0.5s;
   }
 
   > input {
@@ -64,10 +79,11 @@ export const FieldValue = styled.div`
     height: 100%;
     font-size: 3.5em;
     /* color: ${colors.supernova}; */
-    color: #7a7a7a;
+    color: var(--focus-color);
+    transition: color 0.5s;
 
     :focus {
-      color: #15a38a;
+      color: var(--focus-color);
     }
   }
 
