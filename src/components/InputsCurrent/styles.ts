@@ -91,6 +91,7 @@ export const FieldValue = styled.div`
     font-size: 25px;
     color: #7a7a7a;
     margin-left: 10px;
+    transition: color 0.5s;
 
     &:hover {
       cursor: pointer;
