@@ -4,10 +4,11 @@ import colors from '../../styles/colors';
 
 
 export const Wrapper = styled.div`
+  width: 100%;
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
 
   @media (max-width: 1200px) {
     width: 100%;
@@ -32,7 +33,7 @@ export const FieldValue = styled.div`
   box-sizing: border-box;
 
   padding: 15px 10px 15px 10px;
-  margin: 0 30px 0 0;
+  /* margin: 0 30px 0 0; */
   /* border: 1px solid ${colors.portGore}; */
   display: flex;
   flex-direction: row;
@@ -78,12 +79,17 @@ export const FieldValue = styled.div`
     width: 100%;
     height: 100%;
     font-size: 3.5em;
-    /* color: ${colors.supernova}; */
     color: var(--focus-color);
     transition: color 0.5s;
 
-    :focus {
+    &:focus {
       color: var(--focus-color);
+      --focus-color: #15a38a;
+    }
+
+    ::selection {
+      color: var(--focus-color);
+      background: rgba(70, 70, 70, 0.12);
     }
   }
 

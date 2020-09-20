@@ -10,20 +10,20 @@ interface Input {
   price: string;
   currencyLeft: string;
   currencyRight: string;
-  languageCodeLeft: string;
-  languageCodeRight: string;
 }
 
+
+
 export const InputsCurrent: React.FC<Input> = (props) => {
-  const {price, currencyLeft, currencyRight, languageCodeLeft, languageCodeRight} = props;
-  const [amountLeft, setAmountLeft] = useState<string | null>(null);
-  const [amountRight, setAmountRight] = useState<string | null>(null);
+  const {price, currencyLeft, currencyRight} = props;
+  const [amountLeft, setAmountLeft] = useState<string>('');
+  const [amountRight, setAmountRight] = useState<string>('');
   const [value, setValue] = useState('');
 
   function handleAmountLeft(event: React.ChangeEvent<HTMLInputElement>) {
     event.preventDefault();
     const amount = event.target.value;
-    const total = handleMultiplication(amount, value, currencyLeft, languageCodeLeft);
+    const total = handleMultiplication(amount, value, currencyLeft);
     setAmountLeft(amount);
     setAmountRight(total);
   }
@@ -31,14 +31,14 @@ export const InputsCurrent: React.FC<Input> = (props) => {
   function handleAmountRight(event: React.ChangeEvent<HTMLInputElement>) {
     event.preventDefault();
     const amount = event.target.value;
-    const total = handleMultiplication(amount, value, currencyRight, languageCodeRight);
+    const total = handleMultiplication(amount, value, currencyRight);
     setAmountLeft(total);
-    setAmountRight(amount);
+    setAmountRight(amount) ;
   }
 
   useEffect(() => {
-    setAmountLeft(formatCurrency('1', currencyLeft, languageCodeLeft));
-    setAmountRight(formatCurrency(price, currencyRight, languageCodeRight));
+    setAmountLeft(formatCurrency('1', currencyLeft));
+    setAmountRight(formatCurrency(price, currencyRight));
     setValue(price);
   }, [price])//eslint-disable-line
 
@@ -51,6 +51,7 @@ export const InputsCurrent: React.FC<Input> = (props) => {
               type="text"
               value={amountLeft || ''}
               onChange={handleAmountLeft}
+              onClick={e => document.execCommand("selectall", true, '')}
             />
             <FontAwesomeIcon
               icon={faCopy}
@@ -60,10 +61,11 @@ export const InputsCurrent: React.FC<Input> = (props) => {
           <FieldValue>
             <span>{currencyRight}</span>
             <input
-              id="inputBRL"
+              id={`input${currencyRight}`}
               type="text"
               value={amountRight || ''}
               onChange={handleAmountRight}
+              onClick={e => document.execCommand("selectall", true, '')}
             />
             <FontAwesomeIcon
               id="copy"

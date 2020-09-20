@@ -1,5 +1,7 @@
 import axios from 'axios';
 
+export const { CancelToken, isCancel } = axios;
+
 export const apiBCB = axios.create({
   baseURL: 'https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata',
 });

@@ -9,12 +9,12 @@ import Content from './Content';
 import { Wrapper, Body, Container } from './styles';
 
 const Dollar: React.FC = () => {
-  const [valueUSD, setValueUSD] = useState('');
+  const [price, setPrice] = useState('');
 
   useEffect(() => {
-    apiAwesome.get('/all').then((response: AxiosResponse) => {
-      const { USD } = response.data;
-      setValueUSD(formatCurrency(USD.ask, USD.code, 'en-US'));
+    apiAwesome.get('/all').then(async (response: AxiosResponse) => {
+      const { USD } = await response.data;
+      setPrice(formatCurrency(USD.ask, USD.code));
     });
   }, [])//eslint-disable-line
 
@@ -22,11 +22,9 @@ const Dollar: React.FC = () => {
     <Wrapper>
       <Container>
         <InputsCurrent
-          price={valueUSD}
+          price={price}
           currencyLeft="USD"
           currencyRight="BRL"
-          languageCodeLeft="en-US"
-          languageCodeRight="pt-BR"
         />
         <Body>
           <Content />
