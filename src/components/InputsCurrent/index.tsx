@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Wrapper, FieldValue } from './styles';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCopy } from '@fortawesome/free-solid-svg-icons';
-import { handleMultiplication, formatCurrency } from '../../utils/format';
+import { handleMultiplication, handleDivision, formatCurrency } from '../../utils/format';
 import { copyDataInput } from '../../utils/helpers';
 
 interface Input {
@@ -11,8 +11,6 @@ interface Input {
   currencyLeft: string;
   currencyRight: string;
 }
-
-
 
 export const InputsCurrent: React.FC<Input> = (props) => {
   const {price, currencyLeft, currencyRight} = props;
@@ -31,9 +29,9 @@ export const InputsCurrent: React.FC<Input> = (props) => {
   function handleAmountRight(event: React.ChangeEvent<HTMLInputElement>) {
     event.preventDefault();
     const amount = event.target.value;
-    const total = handleMultiplication(amount, value, currencyRight);
+    const total = handleDivision(amount, value, currencyRight);
     setAmountLeft(total);
-    setAmountRight(amount) ;
+    setAmountRight(amount);
   }
 
   useEffect(() => {
@@ -44,36 +42,36 @@ export const InputsCurrent: React.FC<Input> = (props) => {
 
   return (
     <Wrapper>
-          <FieldValue>
-            <span>{currencyLeft}</span>
-            <input
-              id={`input${currencyLeft}`}
-              type="text"
-              value={amountLeft || ''}
-              onChange={handleAmountLeft}
-              onClick={e => document.execCommand("selectall", true, '')}
-            />
-            <FontAwesomeIcon
-              icon={faCopy}
-              onClick={() => copyDataInput('$', `input${currencyLeft}`)}
-            />
-          </FieldValue>
-          <FieldValue>
-            <span>{currencyRight}</span>
-            <input
-              id={`input${currencyRight}`}
-              type="text"
-              value={amountRight || ''}
-              onChange={handleAmountRight}
-              onClick={e => document.execCommand("selectall", true, '')}
-            />
-            <FontAwesomeIcon
-              id="copy"
-              icon={faCopy}
-              onClick={() => copyDataInput('$', `input${currencyRight}`)}
-            />
-          </FieldValue>
-        </Wrapper>
+      <FieldValue>
+        <span>{currencyLeft}</span>
+        <input
+          id={`input${currencyLeft}`}
+          type="text"
+          value={amountLeft}
+          onChange={handleAmountLeft}
+          onClick={e => document.execCommand("selectall", true, '')}
+        />
+        <FontAwesomeIcon
+          icon={faCopy}
+          onClick={() => copyDataInput('$', `input${currencyLeft}`)}
+        />
+      </FieldValue>
+      <FieldValue>
+        <span>{currencyRight}</span>
+        <input
+          id={`input${currencyRight}`}
+          type="text"
+          value={amountRight}
+          onChange={handleAmountRight}
+          onClick={e => document.execCommand("selectall", true, '')}
+        />
+        <FontAwesomeIcon
+          id="copy"
+          icon={faCopy}
+          onClick={() => copyDataInput('$', `input${currencyRight}`)}
+        />
+      </FieldValue>
+    </Wrapper>
   );
 }
 

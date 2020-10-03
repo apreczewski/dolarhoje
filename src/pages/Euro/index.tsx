@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { AxiosResponse } from 'axios';
-import { apiAwesome } from '../../services/api';
+import React, { useState, useEffect, useCallback } from 'react';
+import { getPriceFromAwesome } from '../../services/endpoints/public';
 
 import { formatCurrency } from '../../utils/format';
 import { InputsCurrent } from '../../components/InputsCurrent';
@@ -11,14 +10,23 @@ import { Wrapper, Body, Container } from './styles';
 const Euro: React.FC = () => {
   const [price, setPrice] = useState('');
 
-  useEffect(() => {
-    apiAwesome.get('/all').then((response: AxiosResponse) => {
-      console.log('response -> ', response);
-      const { EUR } = response.data;
-      setPrice(formatCurrency(EUR.ask, EUR.code));
-    });
-  }, [])//eslint-disable-line
+  const getPrice = useCallback(async () => {
+    const { apiCall, toastError } = getPriceFromAwesome();
 
+    try {
+      const { data } = await apiCall();
+      const { EUR } = data;
+      setPrice(formatCurrency(EUR.ask, EUR.code));
+    } catch (error) {
+      if (error.response) {
+        toastError(error.response);
+      }
+    }
+  }, []);
+
+  useEffect(() => {
+    getPrice();
+  }, [])//eslint-disable-line
   return (
     <Wrapper>
       <Container>

@@ -2,7 +2,7 @@ import { apiAwesome, CancelToken } from '../api';
 import {toastDH} from '../../components/Toast'
 
 
-export function getAssetById() {
+export function getPriceFromAwesome() {
   const source = CancelToken.source();
 
   function apiCall() {

@@ -6,11 +6,11 @@ import { Wrapper, Image, Text, List } from './styles';
 const Content: React.FC = () => {
   return (
     <Wrapper>
-      <Paragraph title="O que é Dólar Turismo?" >
-        <Text>Diferente do dólar comercial, o dólar turismo representa a cotação da moeda norte americana para pessoas físicas que precisam dos valores durante uma viagem. O valor é resultado do dólar comercial com acréscimo do Imposto sobre Operações Financeiras (IOF) e outros custos ligados à logística de transporte e operações necessários para que a moeda chegue até o seu destino.</Text>
+      <Paragraph title="O que é Dólar Comercial?" >
+        <Text>O dólar comercial é a cotação dada ao dólar em referência a outras moedas e utilizado em importações e exportações. Caso você veja um jornal e ele diga “Um dólar hoje equivale a cinco reais” é do valor do dólar comercial que estão se referindo.</Text>
       </Paragraph>
       <Paragraph title="Qual a diferença entre Dólar Comercial e Dólar Turismo?" >
-        <Text>O dólar comercial é a cotação dada ao dólar em referência a outras moedas e utilizado em importações e exportações. Caso você veja um jornal e ele diga “Um dólar hoje equivale a cinco reais” é do valor do dólar comercial que estão se referindo.</Text>
+        <Text>Diferente do dólar comercial, o dólar turismo representa a cotação da moeda norte americana para pessoas físicas que precisam dos valores durante uma viagem. O valor é resultado do dólar comercial com acréscimo do Imposto sobre Operações Financeiras (IOF) e outros custos ligados à logística de transporte e operações necessários para que a moeda chegue até o seu destino.</Text>
       </Paragraph>
       <Paragraph title="Afinal, porque o mundo funciona em Dólar?" >
         <Text>Logo no início do século XX, os Estados Unidos já começavam a se firmar enquanto potência mundial. Após a Segunda Guerra Mundial, os norte americanos financiaram a reconstrução do Japão e da Europa. Hoje, a variação do dólar pode influenciar desde o seu serviço de assinatura até o preço do bacalhau. Além de tudo, ainda temos o efeito da “dolarização” onde um país pode abdicar de uma moeda própria e adotar o dólar como moeda oficial (é o caso do Equador) ou simplesmente a população aceitar o dólar em suas transações internas (como a Argentina).</Text>

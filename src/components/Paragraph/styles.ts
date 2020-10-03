@@ -38,7 +38,7 @@ export const Title = styled.div`
   }
 `;
 
-export const Body = styled.p`
+export const Body = styled.div`
   width: 840px;
   justify-self: left;
   text-align: justify;
