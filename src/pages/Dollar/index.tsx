@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { getPriceFromAwesome } from '../../services/endpoints/public';
+import { getPriceFromAwesome } from '../../services/endpoints/awesome';
 
 import { formatCurrency } from '../../utils/format';
 import { InputsCurrent } from '../../components/InputsCurrent';
@@ -15,10 +15,10 @@ const Dollar: React.FC = () => {
 
     try {
       const { data } = await apiCall();
-      console.log('Data >> ', data);
+      // console.log('Data >> ', data);
       const { USD } = data;
 
-      console.log('USD >> ', data)
+      // console.log('USD >> ', data)
 
       setPrice(formatCurrency(USD.ask, USD.code));
     } catch (error) {

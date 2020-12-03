@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { getPriceFromAwesome } from '../../services/endpoints/public';
+import { getPriceFromAwesome } from '../../services/endpoints/awesome';
 
 import { formatCurrency } from '../../utils/format';
 import { InputsCurrent } from '../../components/InputsCurrent';
