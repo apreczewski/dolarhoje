@@ -1,80 +1,45 @@
-import React, { useState, useEffect } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCopy } from '@fortawesome/free-solid-svg-icons';
-import { AxiosResponse } from 'axios';
-import { apiAwesome } from '../../services/api';
+import React, { useState, useEffect, useCallback } from 'react';
+import { getPriceFromAwesome } from '../../services/endpoints/awesome';
 
-import {
-  formatCurrency,
-  handleMultiplication,
-  handleDivision,
-} from '../../utils/format';
-import { copyDataInput } from '../../utils/helpers';
-import { Wrapper, Body, Quotation, Container, FieldValue } from './styles';
+import { formatCurrency } from '../../utils/format';
+import { InputsCurrent } from '../../components/InputsCurrent';
+
 import Content from './Content';
+import { Wrapper, Body, Container } from './styles';
 
 const Dollar: React.FC = () => {
-  const [amountBRL, setAmountBRL] = useState<string | null>(null);
-  const [amountUSD, setAmountUSD] = useState<string | null>(null);
-  const [valueUSD, setValueUSD] = useState('');
+  const [price, setPrice] = useState('');
 
-  function handleAmountBRL(event: React.ChangeEvent<HTMLInputElement>) {
-    event.preventDefault();
-    const amount = event.target.value;
-    const total = handleMultiplication(amount, valueUSD, 'BRL', 'pt-BR');
-    setAmountUSD(amount);
-    setAmountBRL(total);
-  }
+  const getPrice = useCallback(async () => {
+    const { apiCall, toastError } = getPriceFromAwesome();
 
-  function handleAmountUSD(event: React.ChangeEvent<HTMLInputElement>) {
-    event.preventDefault();
-    const amount = event.target.value;
-    const total = handleDivision(amount, valueUSD, 'USD', 'en-US');
-    setAmountBRL(amount);
-    setAmountUSD(total);
-  }
+    try {
+      const { data } = await apiCall();
+      // console.log('Data >> ', data);
+      const { USD } = data;
+
+      // console.log('USD >> ', data)
+
+      setPrice(formatCurrency(USD.ask, USD.code));
+    } catch (error) {
+      if (error.response) {
+        toastError(error.response);
+      }
+    }
+  }, [setPrice]);
 
   useEffect(() => {
-    apiAwesome.get('/all').then((response: AxiosResponse) => {
-      const { USD } = response.data;
-      setValueUSD(formatCurrency(USD.ask, USD.code, 'en-US'));
-      setAmountBRL(formatCurrency(USD.ask, USD.codein, 'pt-BR'));
-      setAmountUSD(formatCurrency('1', USD.code, 'en-US'));
-    });
-  }, [])//eslint-disable-line
+    getPrice();
+  }, [getPrice])//eslint-disable-line
 
   return (
     <Wrapper>
       <Container>
-        <Quotation>
-          <FieldValue>
-            <span>USD</span>
-            <input
-              id="inputUSD"
-              type="text"
-              value={amountUSD || ''}
-              onChange={e => handleAmountBRL(e)}
-            />
-            <FontAwesomeIcon
-              icon={faCopy}
-              onClick={() => copyDataInput('$', 'inputUSD')}
-            />
-          </FieldValue>
-          <FieldValue>
-            <span>BRL</span>
-            <input
-              id="inputBRL"
-              type="text"
-              value={amountBRL || ''}
-              onChange={e => handleAmountUSD(e)}
-            />
-            <FontAwesomeIcon
-              id="copy"
-              icon={faCopy}
-              onClick={() => copyDataInput('R$', 'inputBRL')}
-            />
-          </FieldValue>
-        </Quotation>
+        <InputsCurrent
+          price={price}
+          currencyLeft="USD"
+          currencyRight="BRL"
+        />
         <Body>
           <Content />
         </Body>

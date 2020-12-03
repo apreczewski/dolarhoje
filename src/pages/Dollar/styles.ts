@@ -34,21 +34,6 @@ export const Container = styled.div`
   margin: 30px 0 0 0;
 `;
 
-export const Quotation = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-
-  @media (max-width: 1200px) {
-    width: 100%;
-    flex-direction: column;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-`;
-
 export const Info = styled.div`
   margin: 0 0 30px 0;
   padding: 9px;
@@ -69,60 +54,6 @@ export const Data = styled.div`
   font-size: 12px;
   font-weight: bold;
   color: ${colors.cloudBurst};
-`;
-
-export const FieldValue = styled.div`
-  height: 80px;
-  width: 400px;
-  border: none;
-  background: ${colors.portGore};
-  border-radius: 9px;
-  padding: 15px 10px 15px 10px;
-  margin: 0 30px 0 0;
-  border: 1px solid ${colors.portGore};
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-
-  &:hover {
-    box-shadow: 0px 0.5px 10px ${colors.electricViolet};
-  }
-
-  > span {
-    align-self: flex-end;
-    font-size: 1.5em;
-    color: ${colors.supernova};
-    margin-right: 25px;
-  }
-
-  > input {
-    ::-webkit-inner-spin-button {
-      -webkit-appearance: none;
-    }
-    text-decoration: none;
-    border: none;
-    background: none;
-    width: 100%;
-    height: 100%;
-    font-size: 3.5em;
-    color: ${colors.supernova};
-  }
-
-  > svg {
-    font-size: 25px;
-    color: ${colors.supernova};
-    margin-left: 10px;
-
-    &:hover {
-      cursor: pointer;
-      color: ${colors.white};
-    }
-  }
-
-  @media (max-width: 1200px) {
-    margin: 0 0 15px 0;
-  }
 `;
 
 export const Body = styled.div`

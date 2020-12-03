@@ -13,15 +13,15 @@ import Gold from '../pages/Gold';
 const Routes: React.FC = () => {
   return (
     <Switch>
-      <Route path="/" exact component={Dollar} />
-      <Route path="/dollar" exact component={Dollar} />
-      <Route path="/euro" exact component={Euro} />
-      <Route path="/yuan" exact component={Yuan} />
-      <Route path="/libra" exact component={Libra} />
-      <Route path="/iene" exact component={Iene} />
-      <Route path="/gold" exact component={Bitcoin} />
-      <Route path="/bitcoin" exact component={Ethereum} />
-      <Route path="/ethereum" exact component={Gold} />
+      {/* <Route path="/" exact component={Dollar} /> */}
+      <Route path="/dollar" component={Dollar} />
+      <Route path="/euro" component={Euro} />
+      <Route path="/yuan" component={Yuan} />
+      <Route path="/libra" component={Libra} />
+      <Route path="/iene" component={Iene} />
+      <Route path="/gold" component={Gold} />
+      <Route path="/bitcoin" component={Bitcoin} />
+      <Route path="/ethereum" component={Ethereum} />
     </Switch>
   );
 };
